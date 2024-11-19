@@ -1,0 +1,31 @@
+{% extends 'accounts/base.html' %}
+
+{% block content %}
+
+<div class="login-form">
+<div class="container" id="login">
+    <!-- Left side for sign in -->
+    <div class="sign-in-section">
+        <!-- Social media icons -->
+        <div class="social-icons">
+           <img src="{% static 'images/logo.png' %}" alt="" height="35px" width="150px">
+        </div>
+        <h2>Sign in</h2>
+
+        <!-- Login form -->
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">SIGN IN</button>
+        </form>
+    </div>
+
+    <!-- Right side for sign up -->
+    <div class="right-panel">
+        <h2>Hello, Friend!</h2>
+        <p>Enter your personal details and start your journey with us</p>
+        <a href="{% url 'accounts:register' %}"><button class="sign-up-btn">SIGN UP</button></a>
+    </div>
+</div>
+</div>
+{% endblock %}

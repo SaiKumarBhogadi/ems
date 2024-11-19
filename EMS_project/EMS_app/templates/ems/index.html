@@ -1,0 +1,276 @@
+{% extends 'ems/base.html' %}
+{% block content %}
+
+<div class="container-fluid" id="banner-container"
+    style="background: linear-gradient(to bottom right, #255ab5, #f3f4f7);">
+    <div class="row">
+        <div class="col-lg-5" style="color: white; text-align: center;margin-top:10%;">
+            <h1 style="font-weight: bold; margin-bottom: 20px;">Plan Your Events with Ease</h1>
+            <p style="font-size: 18px; margin-bottom: 30px;">From stunning weddings to unforgettable parties and
+                corporate events, we manage it all!</p>
+                <form action="{% url 'EMS_app:check_redirect' %}" method="POST">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-primary" style="background-color: #ff6b6b; border: none; padding: 10px 20px; font-size: 16px; cursor: pointer;">Go to Quote Page</button>
+                </form>
+                
+                
+            
+                
+                
+        </div>
+        <div class="col-lg-7">
+            <div class="row" id="flex-center">
+                <img src="{% static 'images/img1.jpg' %}" alt="Weddings">
+                <img src="{% static 'images/img2.jpg' %}" alt="Weddings">
+            </div>
+            <div class="row" id="flex-content-center">
+                <img src="{% static 'images/img3.jpg' %}" alt="Weddings">
+                <img src="{% static 'images/img4.jpg' %}" alt="Parties">
+                <img src="{% static 'images/wedding.jpg' %}" alt="Weddings">
+            </div>
+            <div class="row" id="flex-center">
+                <img src="{% static 'images/party.jpg' %}" alt="Corporate Events">
+                <img src="{% static 'images/birthday.jpg' %}" alt="Weddings">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- <div class="container" id="img-container">
+    <div class="img-box">
+        <img src="{% static 'images/wedding.jpg' %}" alt="">
+    </div>
+    <div class="img-box">
+        <img src="{% static 'images/party.jpg' %}" alt="">
+    </div>
+    <div class="img-box">
+        <img src="{% static 'images/birthday.jpg' %}" alt="">
+    </div>
+    <div class="img-box">
+        <img src="{% static 'images/party.jpg' %}" alt="">
+    </div>
+</div> -->
+
+
+<div class="container text-center" id="section-heading">
+    <h1 id="services">Our Event Categories</h1>
+    <p>Discover a range of tailored events we can organize for you. From weddings to corporate events, we ensure every
+        detail is perfectly planned.</p>
+</div>
+<div class="container" id="img-container">
+    <div class="img-box">
+        <img src="{% static 'images/wedding.jpg' %}" alt="Wedding Event">
+        <div class="img-description">
+            <h3>Weddings</h3>
+            <p>Celebrate your special day with elegance and style.</p>
+        </div>
+    </div>
+    <div class="img-box">
+        <img src="{% static 'images/party.jpg' %}" alt="Party Event">
+        <div class="img-description">
+            <h3>Parties</h3>
+            <p>Unforgettable parties for every occasion.</p>
+        </div>
+    </div>
+    <div class="img-box">
+        <img src="{% static 'images/birthday.jpg' %}" alt="Birthday Event">
+        <div class="img-description">
+            <h3>Birthdays</h3>
+            <p>Fun-filled birthday celebrations for all ages.</p>
+        </div>
+    </div>
+    <div class="img-box">
+        <img src="https://images.unsplash.com/photo-1509057199576-632a47484ece" alt="Corporate Event">
+        <div class="img-description">
+            <h3>Corporate Events</h3>
+            <p>Professional setups for corporate excellence.</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div id="testimonials">
+    <h1>What Our Clients Say</h1>
+    <div id="testimonial-grid">
+        <div class="testimonial">
+            <p>"This event management service was exceptional! They made our wedding unforgettable."</p>
+            <div class="author">— Sarah J.</div>
+        </div>
+        <div class="testimonial">
+            <p>"Amazing experience! Everything was organized perfectly for our corporate event."</p>
+            <div class="author">— Mark T.</div>
+        </div>
+        <div class="testimonial">
+            <p>"I couldn't have asked for a better birthday celebration. Highly recommend!"</p>
+            <div class="author">— Emily R.</div>
+        </div>
+        <div class="testimonial">
+            <p>"Professional and attentive! They took care of every detail for our anniversary."</p>
+            <div class="author">— Jessica L.</div>
+        </div>
+        <div class="testimonial">
+            <p>"Absolutely fantastic service! Our event went off without a hitch."</p>
+            <div class="author">— David P.</div>
+        </div>
+        <div class="testimonial">
+            <p>"From planning to execution, everything was perfect! Thank you!"</p>
+            <div class="author">— Laura S.</div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container" id="featured-services">
+    <div class="row align-items-center">
+        <div class="col-md-6 d-flex flex-row align-items-center" style="gap: 50px;">
+            <div class="service-card full-planning-card">
+                <div class="service-card-img" style="display: flex; justify-content:center;">
+                    <img src="{% static 'images/planning.png' %}" alt="" width="50px" height="50px">
+                </div>
+                <h3>FULL PLANNING</h3>
+                <p>Dedicated Partnership + Creative Team</p>
+            </div>
+            <div class="service-card custom-card" style="margin-top: 150px;">
+                <h3>CUSTOM</h3>
+                <p>Weekend Experiences + Celebrations</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="service-description">
+                <h2>Where We Stand Out.</h2>
+                <p>Not all events are created equal, and planning with a partner that is fully invested in your joy
+                    creates space for you to be fully present. We take our events seriously and fully immerse ourselves
+                    with the creative attention each client deserves.</p>
+                <p>Our team dedicates our calendar to a handful of events annually so that we can focus our efforts on
+                    you. Every piece of your weekend is custom designed and produced by our team. After all, you're
+                    worth it.</p>
+                <a href="#" class="check-date-link">Check your date</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="gallery-container" id="gallery">
+    <h2>Our Event Gallery</h2>
+    <div class="row" id="flex-center">
+        <img src="{% static 'images/wedding.jpg' %}" alt="Weddings">
+        <img src="{% static 'images/wedding.jpg' %}" alt="Weddings">
+        <img src="{% static 'images/wedding.jpg' %}" alt="Weddings">
+        <img src="{% static 'images/wedding.jpg' %}" alt="Weddings">
+        <img src="{% static 'images/wedding.jpg' %}" alt="Weddings">
+    </div>
+    <div class="row" id="flex-content-center">
+        <img src="{% static 'images/wedding.jpg' %}" alt="Weddings">
+        <img src="{% static 'images/party.jpg' %}" alt="Parties">
+        <img src="{% static 'images/wedding.jpg' %}" alt="Weddings">
+        <img src="{% static 'images/wedding.jpg' %}" alt="Weddings">
+    </div>
+    <div class="row" id="flex-center">
+       
+        <img src="{% static 'images/wedding.jpg' %}" alt="Weddings">
+        <img src="{% static 'images/wedding.jpg' %}" alt="Weddings">
+        <img src="{% static 'images/wedding.jpg' %}" alt="Weddings">
+
+    </div>
+    <div class="row" id="flex-center">
+       
+        <img src="{% static 'images/wedding.jpg' %}" alt="Weddings">
+        <img src="{% static 'images/wedding.jpg' %}" alt="Weddings">
+       
+    </div>
+    <div class="row" id="flex-center">
+       
+        <img src="{% static 'images/wedding.jpg' %}" alt="Weddings">
+     
+
+    </div>
+</div>
+
+<!-- <div class="contact-form-container">
+    <h2>Contact Us</h2>
+    <form action="/submit" method="POST">
+      <div class="input-box">
+        <input type="text" name="name" required>
+        <label>Name</label>
+      </div>
+      <div class="input-box">
+        <input type="email" name="email" required>
+        <label>Email</label>
+      </div>
+      <div class="input-box">
+        <input type="text" name="phone" required>
+        <label>Phone</label>
+      </div>
+      <div class="input-box">
+        <textarea name="message" required></textarea>
+        <label>Message</label>
+      </div>
+      <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+  </div> -->
+
+
+
+  <div class="contact-section" id="contact">
+    <div class="form-container">
+        <h2 class="contact-h2">Contact Us</h2>
+        <p class="contact-p">We would love to hear from you! Let us know your ideas, and we’ll help bring them to life.</p>
+        <form action="{% url 'EMS_app:index' %}" method="POST" class="animated-form">
+            {% csrf_token %}
+            <div class="input-box">
+                {{ form.name }}
+                {% if form.name.errors %}
+                    <div class="error">{{ form.name.errors }}</div> 
+                {% endif %}
+            </div>
+            <div class="input-box">
+                {{ form.email }}
+                {% if form.email.errors %}
+                    <div class="error">{{ form.email.errors }}</div> 
+                {% endif %}
+            </div>
+            <div class="input-box">
+                {{ form.number }}
+               
+                {% if form.number.errors %}
+                    <div class="error">{{ form.number.errors }}</div>  
+                {% endif %}
+            </div>
+            <div class="input-box">
+                {{ form.message }}
+                {% if form.message.errors %}
+                    <div class="error">{{ form.message.errors }}</div>  
+                {% endif %}
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>        
+    </div>
+    <div class="floating-elements">
+        <!-- Existing floating shapes -->
+        <div class="floating-crown"></div>
+        <div class="floating-ball"></div>
+        <div class="floating-diamond"></div>
+        <!-- New background circles -->
+        <div class="background-circle circle1"></div>
+        <div class="background-circle circle2"></div>
+        <div class="background-circle circle3"></div>
+        <div class="background-circle circle4"></div>
+        <div class="background-circle circle5"></div>
+    </div>
+</div>
+
+
+
+{% endblock %}

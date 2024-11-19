@@ -1,0 +1,189 @@
+{% extends 'ems/base.html' %}
+{% block content %}
+
+
+
+
+
+<section class="service-packages container">
+    <h2>Our Service Packages</h2>
+    <div class="packages">
+        <div class="package-center" >
+            <div class="package">
+                <h3>Basic Package</h3>
+                <ul>
+                    <li>Basic Decoration</li>
+                    <li>Light Catering</li>
+                    <li>Venue Assistance</li>
+                </ul>
+                <p>Starting at <span class="red">25,000 RS</span></p>
+            </div>
+        </div>
+
+        <div class="package-center" >
+        <div class="package">
+            <h3>Premium Package</h3>
+            <ul>
+                <li>Premium Decoration</li>
+                <li>Professional Photography</li>
+                <li>Entertainment (DJ, Live Band)</li>
+                <li>Full Catering</li>
+            </ul>
+            <p>Starting at <span class="red">50,000 Rs</span></p>
+        </div>
+    </div>
+
+    <div class="package-center" >
+        <div class="package">
+            <h3>Custom Package</h3>
+            <ul>
+                <li>Fully customizable to meet your needs</li>
+                <li>Select any services of your choice</li>
+            </ul>
+            <p><span class="red">Contact us for pricing</span></p>
+        </div>
+    </div>
+    </div>
+    <div class="floating-elements"></div>
+    <!-- Existing floating shapes -->
+    <div class="floating-crown"></div>
+    <div class="floating-ball"></div>
+    <div class="floating-diamond"></div>
+    <!-- New background circles -->
+    <div class="background-circle circle1"></div>
+    <div class="background-circle circle2"></div>
+    <div class="background-circle circle3"></div>
+    <div class="background-circle circle4"></div>
+    <div class="background-circle circle5"></div>
+    </div>
+</section>
+
+<!-- Quotation Request Section -->
+<section class="quotation-request container">
+    <h1>Get Your Event Quote</h1>
+    <p>Fill in the form below to receive a personalized event plan and price estimate for your special occasion.</p>
+    {% if success %}
+    <div style="text-align: center; font-weight: bold; color: green; margin-top: 20px;">
+        {{ success }}
+    </div>
+    {% else %}
+    <form action="{% url 'EMS_app:quote' %}" method="POST" class="quote-form">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="event-type">Event Type</label>
+            {{ form.event_type }}
+            {% if form.event_type.errors %}
+            <div class="error">{{ form.event_type.errors.as_text }}</div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <label for="id_date_time">Event Date and Time</label>
+            {{ form.date_time }} <!-- Use the form field defined in the form class -->
+            {% if form.date_time.errors %}
+            <div class="error">{{ form.date_time.errors.as_text }}</div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <label for="event-location">Event Location</label>
+            {{ form.location }}
+            {% if form.location.errors %}
+            <div class="error">{{ form.location.errors.as_text }}</div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <label for="guests">Number of Guests</label>
+            {{ form.guests }}
+            {% if form.guests.errors %}
+            <div class="error">{{ form.guests.errors.as_text }}</div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <label for="budget">Budget Range (Optional)</label>
+            {{ form.budget }}
+            {% if form.budget.errors %}
+            <div class="error">{{ form.budget.errors.as_text }}</div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <label for="services">Services Needed</label>
+            {{ form.services }}
+            {% if form.services.errors %}
+            <div class="error">{{ form.services.errors.as_text }}</div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <label for="comments">Additional Requests/Comments</label>
+            {{ form.requests }}
+            {% if form.requests.errors %}
+            <div class="error">{{ form.requests.errors.as_text }}</div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <label for="name">Contact Name</label>
+            {{ form.name }}
+            {% if form.name.errors %}
+            <div class="error">{{ form.name.errors.as_text }}</div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <label for="email">Contact Email</label>
+            {{ form.email }}
+            {% if form.email.errors %}
+            <div class="error">{{ form.email.errors.as_text }}</div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            {{ form.number }}
+            {% if form.number.errors %}
+            <div class="error">{{ form.number.errors.as_text }}</div>
+            {% endif %}
+        </div>
+        <button type="submit" class="btn-submit">Request a Quote</button>
+    </form>
+    {% endif %}
+</section>
+
+<!-- Service Packages Section -->
+
+
+<!-- Testimonials Section -->
+<div id="testimonials">
+    <h1>What Our Clients Say</h1>
+    <div id="testimonial-grid">
+        <div class="testimonial">
+            <p>"This event management service was exceptional! They made our wedding unforgettable."</p>
+            <div class="author">— Sarah J.</div>
+        </div>
+        <div class="testimonial">
+            <p>"Amazing experience! Everything was organized perfectly for our corporate event."</p>
+            <div class="author">— Mark T.</div>
+        </div>
+        <div class="testimonial">
+            <p>"I couldn't have asked for a better birthday celebration. Highly recommend!"</p>
+            <div class="author">— Emily R.</div>
+        </div>
+        <div class="testimonial">
+            <p>"Professional and attentive! They took care of every detail for our anniversary."</p>
+            <div class="author">— Jessica L.</div>
+        </div>
+        <div class="testimonial">
+            <p>"Absolutely fantastic service! Our event went off without a hitch."</p>
+            <div class="author">— David P.</div>
+        </div>
+        <div class="testimonial">
+            <p>"From planning to execution, everything was perfect! Thank you!"</p>
+            <div class="author">— Laura S.</div>
+        </div>
+    </div>
+    <section class="cta container">
+        <a href="#" class="btn-cta">Request a Free Quote</a>
+    </section>
+</div>
+
+<!-- CTA Section -->
+
+
+
+
+{% endblock %}
